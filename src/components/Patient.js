@@ -1,17 +1,40 @@
-import React from 'react'
+import React , { useState } from "react";
 
 export default function Patient() {
-  return (
-        <form>
+    
+    const [ firstName , setTextFirst ] = useState('Enter text here');
+    var [lastName ,setTextLast ] = useState('Enter text here');
+
+    // const firstName = "Enter first name" ;
+    //let lastName  ;
+
+    const handleOnChange=(event ) =>{
+        //console.log(text);
+        setTextFirst(event.target.value);
+    }
+    
+    const handleOnChangeLast=(event) =>{
+        //console.log(text);
+        setTextLast(event.target.value);
+    }
+    const signinOnChange=(event) =>{
+        console.log(firstName);
+        console.log((lastName));
+        //console.log(lastName);
+        //setText(event.target.value);
+    }
+    
+    return (
+       <form>
 
         <div className="form-row">
             <div className="form-group col-md-6">
             <label for="inputFirstName">First Name</label>
-            <input type="text" className="form-control" id="inputFirstName" placeholder="Enter First Name"/>
+            <input type="text" className="form-control" value={firstName} onChange ={handleOnChange} id="inputFirstName" placeholder="Enter First Name"/>
             </div>
             <div className="form-group col-md-6">
             <label for="inputLastName">Last Name</label>
-            <input type="text" className="form-control" id="inputLaseName" placeholder="Enter Last Name"/>
+            <input type="text" className="form-control" value={lastName} onChange ={handleOnChangeLast}id="inputLaseName" placeholder="Enter Last Name"/>
             </div>
         </div>
 
@@ -39,7 +62,7 @@ export default function Patient() {
         <div className="form-row">
             <div className="form-group col-md-6">
             <label for="inputEmail4">Email</label>
-            <input type="email" className="form-control" id="inputEmail4" placeholder="Email" value ={name} onChange={(e) => e.target.value}/>
+            <input type="email" className="form-control" id="inputEmail4" placeholder="Email" /* value ={ name }*/ onChange={(e) => e.target.value} />
             </div>
             <div className="form-group col-md-6">
             <label for="inputPassword4">Password</label>
@@ -83,7 +106,7 @@ export default function Patient() {
         <div>
         
         </div>
-        <button type="submit" className="btn btn-primary">Sign in</button>
+        <button type="submit" className="btn btn-primary" onClick={signinOnChange}>Sign in</button>
         </form>
   )
 }
