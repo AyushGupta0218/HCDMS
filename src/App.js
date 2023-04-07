@@ -1,12 +1,35 @@
 import './App.css';
-import Patient from './components/Patient';
+import Navbar1 from './components/Navbar1';
+//import Patient from './components/Patient';
+import PatientSignUpform from './components/PatientSignUpform';
+
 
 
 function App() {
   return (
-    <div>
-      <Form/>
-    </div>
+    <>
+     <Navbar1 /> 
+
+     <br/>
+    <br/>
+    <div className='box'>
+
+      <PatientSignUpform />
+      
+      </div>
+    </>
+
+
+    // <Router>
+    //   <div>
+    //     <Routes>
+          
+    //       <Route path=".">
+    //         <PatientSignUpform />
+    //       </Route>
+    //     </Routes>
+    //   </div>
+    // </Router>
   );
 }
 
